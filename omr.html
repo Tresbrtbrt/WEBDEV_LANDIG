@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PL Belts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            width: 30%;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 15px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product a {
+            background-color: #fbe3e8;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .add-to-cart {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ONI Quick Release Belt</h1>
+    <div class="products">
+        <div class="product">
+            <img src="pic/(pic)oni.jpg" alt="product" style="display: block; margin: 0 auto;">
+            <h2>ONI Quick Release Belt</h2>
+            <b>
+                <p>Have the best of both worlds, a Lever and a Prong, with the Oni Quick Release 13mm Powerlifting Belt.</p>
+                <p>The ease of use of a Lever and the versatility of a Prong combined into one Buckle with the handcrafted Oni Quick Release Powerlifting Belt.</p>
+                <p>IPF Approved at a maximum allowed thickness (13mm) and maximum allowed width (10cm).</p>
+                <p>Quick Release Mechanism allows you to easily adjust your powerlifting belt as tight as desired and to quickly unbuckle when finished.</p>
+                <p>Heavy Duty Buckle of the Oni Quick Release 13mm Powerlifting Belt will never break as opposed to Lever Mechanism.</p>
+                <p>100% Sole Leather, same leather found in the soles of leather shoes for maximum durability.</p>
+                <p>Single Suede on the interior so your powerlifting belt won’t slip against poly suits and shirts.</p>
+                <p>$280</p>
+            </b>
+            <p><a href="firstpage1.html">Back to Home Page</a></p>
+            <a href="">VIDEO REVIEW</a>
+            <form id="add-to-cart-form" action="/add-to-cart" method="POST">
+                <input type="hidden" name="product_id" value="12345">
+                <button type="submit" class="add-to-cart">Add to Cart</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('add-to-cart-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            alert('Item added to cart!');
+            // Add your AJAX request here if needed to send data to the server
+            window.location.href = 'firstpage1.html'; // Redirect to the home page
+        });
+    </script>
+</body>
+</html>

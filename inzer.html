@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PL Belts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('pic/(pic)inzerbg.jpg');
+            background-repeat: repeat;
+            background-size: 40%;
+            font-size: 18px;
+        }
+
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            display: inline-block;
+            background-color: gray;
+            width: 30%;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 15px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product a {
+            background-color: #fbe3e8;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        h1 {
+            border: 2px solid black;
+            font-size: 30px;
+            padding: 15px 32px;
+            margin: 4px 2px;
+            display: inline-block;
+            background-color: white;
+            text-align: center;
+        }
+
+        .add-to-cart {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inzer Forever Lever Belt</h1>
+    <div class="products">
+        <div class="product">
+            <img src="pic/(pic)rezni.jpg" alt="product" style="display: block; margin: 0 auto;">
+            <h2>Inzer Forever Lever Belt</h2>
+            <b>
+                <p>- 10 mm thickness choice for lifting applications when a thicker belt is not needed. 10mm conforms to your body shape sooner and is considered by some to be more comfortable.</p>
+                <p>- Easy to tighten with the push of the Lever.</p>
+                <p>- Can be adjusted up to three inches tighter than with a standard buckle</p>
+                <p>- All Inzer Forever Belts™ are one solid thickness of the finest, select, exclusive leather. It is not layers glued together cheaply to make thickness as some other brands that can come loose years later. There are no compromises in quality in the Forever Belt™. Plus, an exclusive Reinforced Leather™ component masterfully integrated inside your Forever Belt™ enhances the breaking-in process and ‘remembers’ your individual form as it outperforms all other belts.</p>
+                <p>- The edges of the belt are finished with refinement but not rounded. Rounding of the edges lessens the effective width. Therefore the complete competition legal width is maintained in the Forever Belt™</p>
+                <p>- Conforms to your body shape over time and forever stays firmly supportive. Does not turn overly soft and fold over as another brand’s belt tends to do.</p>
+                <p>- Finished with top quality, fine suede providing non-slip surface.</p>
+                <p>$130</p>
+            </b>
+            <p><a href="firstpage1.html">Back to Home Page</a></p>
+            <a href="https://www.youtube.com/watch?v=wlAUQ8kheQE">VIDEO REVIEW</a>
+            <form id="add-to-cart-form" action="/add-to-cart" method="POST">
+                <input type="hidden" name="product_id" value="12345">
+                <button type="submit" class="add-to-cart">Add to Cart</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.add-to-cart').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const product = {
+                id: '12345', // Unique product ID
+                name: 'Inzer Forever Lever Belt',
+                price: 130,
+                image: 'pic/(pic)rezni.jpg'
+                // Add more product details as needed
+            };
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Item added to cart!');
+            window.location.href = 'firstpage1.html'; // Redirect to the home page
+        });
+    </script>
+</body>
+</html>

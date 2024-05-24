@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PL Belts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('pic/(pic)sbdbg.jpg');
+            background-repeat: repeat;
+            background-size: auto;
+            font-size: 18px;
+        }
+
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            display: inline-block;
+            background-color: gray;
+            width: 30%;
+            border: 1px solid #ccc;
+            padding: 50px;
+            margin: 25px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product a {
+            background-color: #4CAF50;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        h1 {
+            border: 2px solid black;
+            font-size: 30px;
+            padding: 15px 32px;
+            margin: 4px 2px;
+            display: inline-block;
+            background-color: white;
+            text-align: center;
+        }
+
+        .add-to-cart {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SBD 10mm Lever Belt</h1>
+    <div class="products">
+        <div class="product">
+            <img src="pic/(pic)qwerty.jpg" alt="product" style="display: block; margin: 0 auto;">
+            <h2>SBD 10mm Lever Belt</h2>
+            <strong>
+                <p>Featuring a patented gliding lever, providing the adjustability of a prong belt with the ease and tightness of a lever belt. Ideal for sizing up or down whenever you need during training sessions and competitions.</p>
+                <p>The 13mm lever belt offers the maximum specifications allowed in competitive powerlifting, with four layers of British leather and suede, combined with our patented lever, allowing for the utmost tightness and support.</p>
+                <p>Designed through collaboration with world class athletes, coaches, and health professionals.</p>
+                <p>- 13mm thickness and 10cm in width.</p>
+                <p>- Black oiled leather finish with a red suede interior.</p>
+                <p>- IPF approved and USAPL and USPA compliant.</p>
+                <p>- Made exclusively from British cowhide.</p>
+                <p>- Manufactured in Great Britain.</p>
+                <p>- $280</p>
+            </strong>
+            <p><a href="firstpage1.html">Back to Home Page</a></p>
+            <a href="https://www.youtube.com/watch?v=9TgU2tvNju8">VIDEO REVIEW</a>
+            <form id="add-to-cart-form" action="/add-to-cart" method="POST">
+                <input type="hidden" name="product_id" value="12345">
+                <button type="submit" class="add-to-cart">Add to Cart</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+       document.querySelector('.add-to-cart').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const product = {
+                id: '12345', // Unique product ID
+                name: 'SBD 10mm Lever Belt',
+                price: 280,
+                image: 'pic/(pic)qwerty.jpg'
+                // Add more product details as needed
+            };
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Item added to cart!');
+            window.location.href = 'firstpage1.html'; // Redirect to the home page
+        });
+    </script>
+</body>
+</html>
+
